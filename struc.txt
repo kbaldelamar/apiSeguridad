@@ -1,0 +1,44 @@
+auth_api/
+├── app/
+│   ├── __init__.py
+│   ├── main.py              # Punto de entrada de FastAPI
+│   ├── config.py            # Configuraciones y variables de entorno
+│   ├── database.py          # Conexión a MariaDB con SQLAlchemy
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── user.py          # Modelo de usuario
+│   │   ├── role.py          # Modelo de roles
+│   │   └── token.py         # Modelo para tokens de actualización
+│   ├── schemas/
+│   │   ├── __init__.py
+│   │   ├── user.py          # Esquemas Pydantic para usuarios
+│   │   ├── token.py         # Esquemas para tokens
+│   │   └── auth.py          # Esquemas para autenticación
+│   ├── routes/
+│   │   ├── __init__.py
+│   │   ├── auth.py          # Rutas de autenticación (login, registro)
+│   │   ├── users.py         # Rutas para gestión de usuarios
+│   │   └── tokens.py        # Rutas para gestión de tokens
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── auth.py          # Lógica de autenticación
+│   │   ├── user.py          # Lógica para usuarios
+│   │   └── token.py         # Manejo de tokens (generación, validación)
+│   ├── middleware/
+│   │   ├── __init__.py
+│   │   └── auth_middleware.py # Middleware para verificación de tokens
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── security.py      # Funciones de seguridad (hash, verificación)
+│   │   ├── validators.py    # Validadores personalizados
+│   │   └── exceptions.py    # Excepciones personalizadas
+│   └── dependencies/
+│       ├── __init__.py
+│       └── auth.py          # Dependencias para inyección en rutas
+├── .env                     # Variables de entorno (no incluir en git)
+├── .env.example             # Ejemplo de variables de entorno
+├── .gitignore
+├── requirements.txt         # Dependencias del proyecto
+├── Dockerfile               # Para contenerización
+├── docker-compose.yml       # Para entorno de desarrollo
+└── README.md                # Documentación
